@@ -16,7 +16,7 @@ public class Racing {
 
         List<RacingCar> cars = racingCars.getRacingCars();
         for (int i = 0; i < repeatCount.getCount(); i++) {
-            run(cars);
+            racingStart(cars);
             System.out.println();
         }
 
@@ -24,7 +24,7 @@ public class Racing {
         System.out.println(racingResult.winners());
     }
 
-    private void run(List<RacingCar> cars) {
+    private void racingStart(List<RacingCar> cars) {
         for (RacingCar car : cars) {
             int pickedNumber = Randoms.pickNumberInRange(MIN_NUMBER, MAX_NUMBER);
             car.move(pickedNumber);
@@ -32,13 +32,12 @@ public class Racing {
     }
 
     private RacingCars carSetUp() {
-        RacingCars racingCars = new RacingCars();
         System.out.println(Messages.START_MESSAGE);
+        RacingCars racingCars = new RacingCars();
 
         try {
             String[] carNames = Console.readLine().split(",");
             addCar(racingCars, carNames);
-
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return carSetUp();
@@ -56,8 +55,11 @@ public class Racing {
 
     private RepeatCount repeatSetUp() {
         System.out.println(Messages.REPEAT_COUNT_SETTING);
-        String repeat = Console.readLine();
-
-        return new RepeatCount(repeat);
+        try {
+            return new RepeatCount(Console.readLine());
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return repeatSetUp();
+        }
     }
 }
