@@ -36,6 +36,14 @@ class RacingCarNameTest {
     }
 
     @Test
+    void 자동차_이름_개행문자_설정_불가() {
+        // then
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> new RacingCarName(" "))
+                .withMessageContaining(Messages.CAR_NAME_NOT_EMPTY);
+    }
+
+    @Test
     void 자동차_이름_NULL_불가() {
         // then
         assertThatExceptionOfType(NullPointerException.class)

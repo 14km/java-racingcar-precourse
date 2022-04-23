@@ -22,13 +22,13 @@ public class RacingCarName {
     }
 
     private void validationCarNameNotEmpty(String carName) {
-        if (carName.isEmpty()) {
+        if (carName.trim().isEmpty()) {
             throw new IllegalArgumentException(Messages.CAR_NAME_NOT_EMPTY);
         }
     }
 
     private void validationCarNameLength(String carName) {
-        if (carName.length() > MAX_LENGTH) {
+        if (carName.trim().length() > MAX_LENGTH) {
             throw new IllegalArgumentException(Messages.EXCEED_CAR_NAME_MAX_LENGTH);
         }
     }
