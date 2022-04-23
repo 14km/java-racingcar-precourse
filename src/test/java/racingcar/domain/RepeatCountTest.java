@@ -37,6 +37,6 @@ class RepeatCountTest {
         // then
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> new RepeatCount("0"))
-                .withMessageContaining(Messages.REPEAT_NOT_NUMBER);
+                .withMessageContaining(Messages.REPEAT_NOT_ZERO);
     }
 }

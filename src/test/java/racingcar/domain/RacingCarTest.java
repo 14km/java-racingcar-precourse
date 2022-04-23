@@ -35,7 +35,7 @@ class RacingCarTest {
         racingCar.move(4);
 
         Assertions.assertThat(racingCar.currentLocationMark()).isEqualTo(
-                String.format("%s : %s", racingCarName, RacingCar.MARK)
+                String.format("%s : %s", racingCarName.getName(), RacingCar.MARK)
         );
     }
 }
