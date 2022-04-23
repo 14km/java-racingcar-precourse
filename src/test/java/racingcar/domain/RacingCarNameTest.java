@@ -15,9 +15,8 @@ class RacingCarNameTest {
     void 자동차_이름_설정(String input) {
         RacingCarName racingCarName = new RacingCarName(input);
 
-        Assertions.assertThat(racingCarName.getName()).isEqualTo(input);
+        Assertions.assertThat(racingCarName.toString()).isEqualTo(input);
     }
-
 
     @ParameterizedTest
     @ValueSource(strings = {"counting_car"})
