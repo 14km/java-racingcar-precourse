@@ -19,7 +19,7 @@ class RacingCarNameTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"counting_car"})
+    @ValueSource(strings = {"counting_car", "javaji"})
     void 자동차_이름_초과_에러(String input) {
         // then
         assertThatExceptionOfType(IllegalArgumentException.class)

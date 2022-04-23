@@ -4,11 +4,10 @@ public class RacingCar {
     public static final int MOVING_CONDITION = 4;
     public static final String MARK = "-";
 
+    private int currentLocation = 0;
     private final RacingCarName carName;
-    private int currentLocation;
 
     public RacingCar(RacingCarName carName) {
-        this.currentLocation = 0;
         this.carName = carName;
     }
 
@@ -24,6 +23,10 @@ public class RacingCar {
         return currentLocation;
     }
 
+    public String getCarName() {
+        return carName.getName();
+    }
+
     public String currentLocationMark() {
         StringBuilder stringBuilder = new StringBuilder();
 
@@ -31,6 +34,6 @@ public class RacingCar {
             stringBuilder.append(MARK);
         }
 
-        return String.format("%s : %s", this.carName, stringBuilder);
+        return String.format("%s : %s", this.carName.getName(), stringBuilder);
     }
 }
