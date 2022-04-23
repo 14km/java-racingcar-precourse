@@ -4,23 +4,24 @@ public class RacingCar {
     public static final int MOVING_CONDITION = 4;
     public static final String MARK = "-";
 
-    private int currentLocation = 0;
     private final RacingCarName carName;
+    private final RacingCarLocation racingCarLocation;
 
     public RacingCar(RacingCarName carName) {
         this.carName = carName;
+        this.racingCarLocation = new RacingCarLocation();
     }
 
     public void move(int random) {
         if (MOVING_CONDITION <= random) {
-            this.currentLocation++;
+            this.racingCarLocation.addLocation();
         }
 
         System.out.println(currentLocationMark());
     }
 
     public int getCurrentLocation() {
-        return currentLocation;
+        return racingCarLocation.currentLocation();
     }
 
     public String getCarName() {
@@ -30,7 +31,7 @@ public class RacingCar {
     public String currentLocationMark() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i = 0; i < currentLocation; i++) {
+        for (int i = 0; i < racingCarLocation.currentLocation(); i++) {
             stringBuilder.append(MARK);
         }
 
