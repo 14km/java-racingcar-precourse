@@ -28,7 +28,7 @@ public class RacingCarName {
     }
 
     private void validationCarNameLength(String carName) {
-        if (carName.length() >= MAX_LENGTH) {
+        if (carName.length() > MAX_LENGTH) {
             throw new IllegalArgumentException(Messages.EXCEED_CAR_NAME_MAX_LENGTH);
         }
     }

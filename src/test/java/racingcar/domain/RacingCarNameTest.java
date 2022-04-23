@@ -11,7 +11,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOf
 class RacingCarNameTest {
 
     @ParameterizedTest
-    @ValueSource(strings = {"abc"})
+    @ValueSource(strings = {"abc", "ABCDE"})
     void 자동차_이름_설정(String input) {
         RacingCarName racingCarName = new RacingCarName(input);
 
