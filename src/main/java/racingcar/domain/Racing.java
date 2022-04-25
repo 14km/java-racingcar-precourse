@@ -19,9 +19,7 @@ public class Racing {
             racingStart(cars);
             System.out.println();
         }
-
-        RacingResult racingResult = new RacingResult(cars);
-        System.out.println(racingResult.winners());
+        System.out.println(new RacingResult(cars).winners());
     }
 
     private void racingStart(List<RacingCar> cars) {
@@ -36,13 +34,11 @@ public class Racing {
         RacingCars racingCars = new RacingCars();
 
         try {
-            String[] carNames = Console.readLine().split(",");
-            addCar(racingCars, carNames);
+            addCar(racingCars, Console.readLine().split(","));
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return carSetUp();
         }
-
         return racingCars;
     }
 

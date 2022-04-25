@@ -34,7 +34,6 @@ public class RepeatCount {
         } catch (NumberFormatException e) {
             return false;
         }
-
         return true;
     }
 }
